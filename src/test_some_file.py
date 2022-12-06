@@ -18,3 +18,7 @@ class TestRollFate:
             assert roll_fate(0) == -4
             assert roll_fate(0) == -4
             assert roll_fate(0) == -4
+
+    def test_all_break_the_build(self) -> None:
+        with patch('some_file.randint', return_value=1):
+            assert roll_fate(0) == -1
