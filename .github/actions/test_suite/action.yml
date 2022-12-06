@@ -1,0 +1,16 @@
+name: "Test Suite"
+description: "Run tests"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Install deps
+      run: |
+        pip install -r requirements.txt
+      shell: bash
+
+    - name: Run Tests
+      run: |
+        docker compose up test --exit-code-from test
+      shell: bash
+

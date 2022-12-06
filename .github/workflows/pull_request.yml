@@ -1,0 +1,19 @@
+name: Pull Request
+
+on:
+  pull_request:
+    branches:
+      - '*'
+
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout code"
+        uses: actions/checkout@v2
+
+      - name: "Test Suite"
+        uses: ./.github/actions/test_suite
