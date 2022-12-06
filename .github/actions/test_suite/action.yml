@@ -11,6 +11,6 @@ runs:
 
     - name: Run Tests
       run: |
-        docker compose up test --exit-code-from test
+        pytest src/
       shell: bash
 
