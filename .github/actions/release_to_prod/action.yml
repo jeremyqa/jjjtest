@@ -10,6 +10,7 @@ runs:
         echo "${{github.head_ref}}"
         echo "${{github.ref_name}}"
         git rev-parse --abbrev-ref HEAD
+        git branch --show-current
       shell: bash
 
     - name: Do some release stuff for main
