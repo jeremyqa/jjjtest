@@ -1,0 +1,14 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Release magic"
+        uses: ./.github/actions/release_to_prod

@@ -1,0 +1,10 @@
+name: "Release to prod"
+description: "Pretend this released to production"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Do some release stuff
+      run: |
+        echo "this is the release script"
+      shell: bash
