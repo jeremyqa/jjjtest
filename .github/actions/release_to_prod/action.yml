@@ -9,6 +9,7 @@ runs:
         echo "${{github.ref}}"
         echo "${{github.head_ref}}"
         echo "${{github.ref_name}}"
+        echo git rev-parse --abbrev-ref HEAD
       shell: bash
 
     - name: Do some release stuff for main
