@@ -3,7 +3,7 @@ from random import randint
 
 
 def make_a_request() -> int:
-    response = requests.get('https://example.com')
+    response = requests.get('https://example.org')
     return response.status_code
 
 
