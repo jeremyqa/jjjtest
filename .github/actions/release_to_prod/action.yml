@@ -4,6 +4,10 @@ description: "Pretend this released to production"
 runs:
   using: "composite"
   steps:
+    - name: print out stuff
+      run: echo "${{github.ref}}"
+      shell: bash
+
     - name: Do some release stuff for main
       if: github.ref == 'refs/heads/main'
       run: |
