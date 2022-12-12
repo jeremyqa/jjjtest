@@ -5,7 +5,10 @@ runs:
   using: "composite"
   steps:
     - name: print out stuff
-      run: echo "${{github.ref}}"
+      run: |
+        echo "${{github.ref}}"
+        echo "${{GITHUB_HEAD_REF}}"
+        echo "${{github.ref_name}}"
       shell: bash
 
     - name: Do some release stuff for main
