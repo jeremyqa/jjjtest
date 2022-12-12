@@ -7,7 +7,7 @@ runs:
     - name: print out stuff
       run: |
         echo "${{github.ref}}"
-        echo "${{GITHUB_HEAD_REF}}"
+        echo "${{github.head_ref}}"
         echo "${{github.ref_name}}"
       shell: bash
 
