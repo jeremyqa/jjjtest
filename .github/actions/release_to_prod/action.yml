@@ -12,13 +12,13 @@ runs:
 
 
     - name: Do some release stuff for a hotfix
-      if: contains(github.ref, 'hotfix')
+      if: contains(github.ref, 'hotfix') == true
       run: |
         echo "this is the release script for a HOTFIX"
       shell: bash
 
     - name: Warn about other branches
-      if: !contains(github.ref, 'hotfix') && github.ref != 'refs/head/main'
+      if: contains(github.ref, 'hotfix') == false && github.ref != 'refs/head/main'
       run: |
         echo "Can only release main or hotfix"
       shell: bash
