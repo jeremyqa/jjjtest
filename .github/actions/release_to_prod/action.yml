@@ -11,6 +11,7 @@ runs:
       # echo "${{github.ref_name}}" -> 7/merge
       # git rev-parse --abbrev-ref HEAD -> HEAD
       run: |
+        echo "${{ toJson(github) }}"
         echo "${{github.ref}}"
         echo "${{github.head_ref}}"
         echo "${{github.ref_name}}"
