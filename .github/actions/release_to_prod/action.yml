@@ -11,7 +11,9 @@ runs:
       # echo "${{github.ref_name}}" -> 7/merge
       # git rev-parse --abbrev-ref HEAD -> HEAD
       run: |
-        echo "${{github.event}}"
+        echo "${{github.event.target_commitish}}"
+        echo "${{github.target_commitish}}"
+        echo "${{ toJson(github) }}"
       shell: bash
 
     - name: Do some release stuff for main
