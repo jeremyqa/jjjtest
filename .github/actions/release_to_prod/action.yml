@@ -11,8 +11,7 @@ runs:
       # echo "${{github.ref_name}}" -> 7/merge
       # git rev-parse --abbrev-ref HEAD -> HEAD
       run: |
-        echo "${{github.event.target_commitish}}"
-        echo "${{github.target_commitish}}"
+        echo "${{github.event.release.target_commitish}}"
         echo "${{ toJson(github) }}"
       shell: bash
 
@@ -24,13 +23,13 @@ runs:
 
 
     - name: Do some release stuff for a hotfix
-      if: contains(github.event.target_commitish, 'hotfix') == true
+      if: contains(github.event.release.target_commitish, 'hotfix') == true
       run: |
         echo "this is the release script for a HOTFIX"
       shell: bash
 
     - name: Warn about other branches
-      if: github.event.target_commitish != 'main'
+      if: github.event.release.target_commitish != 'main'
       run: |
         echo "Can only release main or hotfix"
       shell: bash
